@@ -96,6 +96,16 @@ label {
   text-decoration: none;
   color: rgb(110, 128, 237);
 }
+.error-message{
+    background:#ffe5e5;
+    color:red;
+    padding:10px;
+    border-radius:5px;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+
 
 @media (max-width: 768px) {
   .login-page{
@@ -106,23 +116,29 @@ label {
   .left-panel,
   .right-panel{
     width:100%;
-    height: 100vh;
+    
   }
   .left-panel{
     gap: 10px;
+    padding: 20px;
   }
-  .left-panel h1{
-    font-size: 28px;
+  .left-panel h1 {
+    font-size: 24px;
   }
-  .left-panel p{
+
+  .left-panel p {
     font-size: 18px;
+  }
+  .login-card h2 {
+    font-size: 28px;
   }
   .login-card{
     width:90%;
-    margin-top: 50px;
+    margin: 50px 0;
   }
   .bank-icon,
   .shield-icon {
     font-size: 40px;
   }
+  
 }
