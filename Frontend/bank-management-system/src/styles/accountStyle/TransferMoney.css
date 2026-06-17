@@ -1,0 +1,245 @@
+.transfer-page {
+  padding: 20px;
+}
+
+.transfer-heading h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.transfer-heading p {
+  color: #64748b;
+}
+
+.transfer-content {
+  display: flex;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.transfer-left {
+  flex: 1;
+}
+
+.transfer-right {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.transfer-card{
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 30px;
+}
+
+.transfer-card h3 {
+  color: #2563eb;
+  margin-bottom: 25px;
+}
+
+.transfer-card label {
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 18px;
+  font-weight: 500;
+}
+
+.transfer-card input,
+.transfer-card textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+}
+
+.balance-input {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.transfer-btn {
+  width: 100%;
+  height: 58px;
+  margin-top: 25px;
+
+  border: none;
+  border-radius: 10px;
+
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #1d4ed8
+  );
+}
+
+.transfer-btn:disabled {
+  opacity: .5;
+}
+
+.summary-row {
+  display: flex;
+ 
+  margin-top: 20px;
+}
+
+.green {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wallet-icon,
+.note-icon {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet-icon {
+  background: #eaf1ff;
+}
+
+.note-icon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.note-card ul {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.note-card li {
+  margin-bottom: 12px;
+}
+
+.note-card li::marker {
+  color: #16a34a;
+}
+
+
+
+.transfer-popup-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.transfer-popup{
+  width: 380px;
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  animation: popupShow 0.25s ease;
+}
+
+.transfer-popup h3{
+  margin-bottom: 15px;
+  color: #1e3a8a;
+}
+
+.transfer-popup p{
+  color: #555;
+  line-height: 1.6;
+}
+
+.transfer-popup-actions{
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.transfer-popup-actions button{
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cancel-transfer-btn{
+  background: #e5e7eb;
+}
+
+.cancel-transfer-btn:hover{
+  background: #d1d5db;
+}
+
+.confirm-transfer-btn{
+  background: #2563eb;
+  color: white;
+}
+
+.confirm-transfer-btn:hover{
+  background: #1d4ed8;
+}
+
+@keyframes popupShow{
+
+  from{
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media(max-width:480px){
+
+  .transfer-popup{
+    width: 90%;
+  }
+
+  .transfer-popup-actions{
+    flex-direction: column;
+  }
+
+}
+
+
+
+
+
+
+
+@media(max-width:992px){
+
+  .transfer-content{
+    flex-direction:column;
+  }
+}

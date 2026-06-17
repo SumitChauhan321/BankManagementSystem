@@ -37,17 +37,17 @@ public class SecurityConfig {
         http
             .cors(Customizer.withDefaults())
             .csrf(csrf -> csrf.disable())
-            .sessionManagement(session -> 
+            .sessionManagement(session ->
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
 
             .authorizeHttpRequests(auth -> auth
 
-                
-                .requestMatchers("/auth/**").permitAll()
 
-                
-                
+                .requestMatchers("/auth/**").permitAll()
+                .requestMatchers("/account/**").hasRole("USER")
+
+
 
                 // Everything else
                 .anyRequest().authenticated()
@@ -57,9 +57,9 @@ public class SecurityConfig {
 
         return http.build();
     }
-    
-    
-    
+
+
+
     @Bean
  	public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();

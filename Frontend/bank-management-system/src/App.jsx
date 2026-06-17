@@ -10,7 +10,7 @@ import Dashboard from "./pages/user/Dashboard";
 import Deposit from "./pages/user/Deposit";
 import Withdraw from "./pages/user/Withdraw";
 import TransferMoney from "./pages/user/TransferMoney";
-import TransactionHistory from "./pages/user/TransactionHistory";
+import Transaction from "./pages/user/Transaction";
 import Profile from "./pages/user/Profile";
 import ChangePassword from "./pages/user/ChangePassword";
 
@@ -34,7 +34,7 @@ function App() {
           <Route path="deposit" element={<Deposit />} />
           <Route path="withdraw" element={<Withdraw />} />
           <Route path="transfer" element={<TransferMoney />} />
-          <Route path="transactions" element={<TransactionHistory />} />
+          <Route path="transactions" element={<Transaction />} />
           <Route path="profile" element={<Profile />} />
           <Route path="change-password" element={<ChangePassword />} />
         </Route>

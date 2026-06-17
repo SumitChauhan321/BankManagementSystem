@@ -1,0 +1,254 @@
+.withdraw-page {
+  padding: 20px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+/* Heading */
+
+.withdraw-heading h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.withdraw-heading p {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* Main Layout */
+
+.withdraw-content {
+  display: flex;
+  gap: 25px;
+  margin-top: 25px;
+  align-items: flex-start;
+}
+
+.withdraw-left {
+  flex: 1;
+}
+
+.withdraw-right {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Cards */
+
+
+
+/* Form Card */
+
+.withdraw-card h3 {
+  color: #2563eb;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+/* Form */
+
+.withdraw-card label {
+  display: block;
+
+  margin-bottom: 8px;
+  margin-top: 18px;
+
+  color: #0f172a;
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.withdraw-card input,
+.withdraw-card textarea {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid #dbe2ea;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+.withdraw-card input:focus,
+.withdraw-card textarea:focus {
+  border-color: #2563eb;
+}
+
+.withdraw-card textarea {
+  resize: none;
+}
+
+/* Balance Input */
+
+.balance-input {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* Button */
+
+.withdraw-btn {
+  width: 100%;
+  height: 58px;
+
+  margin-top: 25px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #1d4ed8
+  );
+
+  color: white;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.withdraw-btn:hover {
+  opacity: 0.95;
+}
+
+.withdraw-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Message */
+
+.message {
+  margin-top: 15px;
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Summary Card */
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  margin: 0;
+  color: #2563eb;
+}
+
+/* Icons */
+
+.wallet-icon,
+.note-icon {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 24px;
+}
+
+.wallet-icon {
+  background: #eaf1ff;
+}
+
+.note-icon {
+  background: #dcfce7;
+  color: #16a34a;
+  font-weight: 700;
+}
+.note-card ul{
+    width: 80%;
+    margin-top: -60px;
+}
+/* Summary Rows */
+
+
+
+.green {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* Note Card */
+
+.note-card ul {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.note-card li {
+  margin-bottom: 15px;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.note-card li::marker {
+  color: #16a34a;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+
+  .withdraw-content {
+    flex-direction: column;
+  }
+
+  .withdraw-left,
+  .withdraw-right {
+    width: 100%;
+  }
+
+  .withdraw-heading h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .withdraw-page {
+    padding: 15px;
+  }
+
+  .withdraw-card,
+  .summary-card,
+  .note-card {
+    padding: 20px;
+  }
+
+  .withdraw-heading h2 {
+    font-size: 28px;
+  }
+
+  .withdraw-btn {
+    height: 52px;
+    font-size: 16px;
+  }
+}

@@ -1,7 +1,152 @@
-.deposit-container {
-  padding: 20px;
+/* Popup Overlay */
+
+.popup-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    animation: fadeIn 0.3s ease;
 }
 
+/* Popup Box */
+
+.popup-box{
+    width: 90%;
+    max-width: 400px;
+
+    background: #fff;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    animation: popupScale 0.3s ease;
+}
+
+.popup-box h3{
+    font-size: 24px;
+    color: #0f2b7a;
+    margin-bottom: 15px;
+}
+
+.popup-box p{
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Buttons */
+
+.popup-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.cancel-btn,
+.confirm-btn{
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.cancel-btn{
+    background: #f1f3f5;
+    color: #333;
+}
+
+.cancel-btn:hover{
+    background: #e5e7eb;
+}
+
+.confirm-btn{
+    background: #0d6efd;
+    color: white;
+}
+
+.confirm-btn:hover{
+    background: #0b5ed7;
+}
+
+/* Animations */
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes popupScale{
+    from{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+    .popup-box{
+        padding: 20px;
+    }
+
+    .popup-box h3{
+        font-size: 20px;
+    }
+
+    .popup-buttons{
+        flex-direction: column;
+    }
+
+    .cancel-btn,
+    .confirm-btn{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+.deposit-container {
+  padding: 20px;
+  
+}
+.main-content{
+  background: rgb(254, 254, 254);
+}
 .deposit-heading {
   margin-bottom: 20px;
 }
@@ -31,7 +176,9 @@
   border-radius: 12px;
   padding: 20px;
 }
-
+.summary-card{
+  background:rgb(245, 248, 254);
+}
 .deposit-card h2 {
   color: #2563eb;
   font-size: 18px;
@@ -96,7 +243,9 @@
   gap: 30px;
   margin-top: -5px;
 }
-
+.summary-row span:first-child {
+  font-weight: 600;
+}
 .balance {
   color: #16a34a;
   font-weight: 600;

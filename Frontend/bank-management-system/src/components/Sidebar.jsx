@@ -93,14 +93,7 @@ function Sidebar({
               </Link>
             </li>
 
-            <li>
-              <Link
-                to="/user/change-password"
-                onClick={closeSidebar}
-              >
-                Change Password
-              </Link>
-            </li>
+            
           </>
         )}
 

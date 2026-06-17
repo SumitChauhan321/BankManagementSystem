@@ -1,0 +1,191 @@
+.txn-page{
+  padding: 25px;
+  background: #f5f7fb;
+  min-height: 100vh;
+  border-radius: 20px;
+}
+
+.txn-header{
+  margin-bottom: 25px;
+}
+
+.txn-header h1{
+  font-size: 32px;
+  color: #1f2a56;
+}
+
+.txn-header p{
+  color: #6b7280;
+  margin-top: 5px;
+}
+
+.txn-stats{
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.txn-stat-card{
+  
+  
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.txn-icon{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+.txn-stat-card-content{
+  display: flex;
+      flex-direction: column;
+    gap: 10px;
+}
+.txn-blue{
+  background: #e8f0ff;
+  color: #2563eb;
+}
+
+.txn-green{
+  background: #eaf8ee;
+  color: #16a34a;
+}
+
+.txn-red{
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.txn-purple{
+  background: #f3e8ff;
+  color: #9333ea;
+}
+
+.txn-table-card{
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow-x: auto;
+}
+
+.txn-table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.txn-table th{
+  background: #f8fafc;
+  padding: 15px;
+  text-align: left;
+  font-size: 14px;
+  color: #374151;
+}
+
+.txn-table td{
+  padding: 15px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.txn-table tr:hover{
+  background: #f9fafb;
+}
+
+.txn-badge{
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.txn-deposit{
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.txn-withdraw{
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.txn-transfer{
+  background: #ede9fe;
+  color: #7c3aed;
+  
+}
+
+.txn-success{
+  background: #dcfce7;
+  color: #16a34a;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.txn-positive{
+  color: #16a34a;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.txn-negative{
+  color: #ef4444;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.txn-empty-row td{
+  height: 55px;
+  font-size: 16px;
+}
+
+.txn-pagination{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px;
+}
+
+.txn-pagination button{
+  width: 38px;
+  height: 38px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+}
+
+.txn-pagination .active{
+  background: #2563eb;
+  color: white;
+  border: none;
+}
+
+@media(max-width:768px){
+
+  .txn-page{
+    padding: 15px;
+  }
+
+  .txn-stats{
+    flex-direction: column;
+  }
+
+  .txn-stat-card{
+    width: 100%;
+  }
+
+  .txn-pagination{
+    justify-content: center;
+  }
+}

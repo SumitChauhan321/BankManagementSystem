@@ -25,23 +25,23 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class AuthController {
-	
+
 	@Autowired
 	private AuthService authService;
-	
+
 	@GetMapping("/check-email")
 	public ResponseEntity<EmailCheckResponseDto> checkEmail(@RequestParam("email") String email){
 		return ResponseEntity.ok(authService.checkEmail(email));
 	}
-	
+
 	@PostMapping("/signup")
 	public ResponseEntity<SignupResponseDto> signup(@RequestBody SignupRequestDto signupRequestDto){
 		 return ResponseEntity.status(HttpStatus.CREATED).body(authService.signup(signupRequestDto));
-	} 
-	
+	}
+
 	@PostMapping("/login")
 	public ResponseEntity<LoginResponseDto> login(@RequestBody LoginRequestDto loginRequestDto){
-		
+
 		LoginResponseDto response=authService.login(loginRequestDto);
 
 	    if (response.getToken() == null) {

@@ -1,7 +1,6 @@
 package com.example.entity;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,7 +21,7 @@ public class Transaction {
     private Long id;
 
     private String transactionType;
-    
+
     private String transactionId;
 
     private Double amount;
@@ -34,7 +33,7 @@ public class Transaction {
     private String senderAccount;
 
     private String receiverAccount;
-    
+
     private Double balanceAfterTransaction;
 
     @ManyToOne
