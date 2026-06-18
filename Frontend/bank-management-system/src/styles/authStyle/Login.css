@@ -64,6 +64,7 @@ label {
   align-items: center;
 }
 .input-box input{
+  width: 100%;
   border:none;
   outline:none;
   margin-left: 10px;

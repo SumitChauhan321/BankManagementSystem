@@ -18,6 +18,7 @@ import com.example.entity.Transaction;
 import com.example.entity.User;
 import com.example.repository.TransactionRepository;
 import com.example.repository.UserRepository;
+import com.example.security.EmailService;
 
 import jakarta.transaction.Transactional;
 
@@ -29,6 +30,10 @@ public class AccountService {
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private EmailService emailService;
+	
 
 	@Transactional
 	public Map<String, Object> deposit(DepositRequestDto dto) {
@@ -68,6 +73,11 @@ public class AccountService {
 	    newBalance =
 	            Math.round(newBalance * 100.0)
 	            / 100.0;
+	    
+	    
+	    emailService.sendDepositEmail(user.getEmail(), user.getUsername(), 
+	    		dto.getAccountNumber(),dto.getAmount(), newBalance);
+	    
 	    return Map.of(
 	            "message",
 	            "Amount deposited successfully",
@@ -117,9 +127,12 @@ public class AccountService {
 	    transaction.setTransactionId(txnId);
 
 	    transactionRepository.save(transaction);
-	    double userBalance =
-	            Math.round(user.getBalance() * 100.0)
-	            / 100.0;
+	    double userBalance =Math.round(user.getBalance() * 100.0)/ 100.0;
+	    
+	    
+	    
+	    emailService.sendWithdrawEmail(user.getEmail(), user.getUsername(),
+	    		dto.getAccountNumber(), dto.getAmount(), userBalance);
 
 		return new WithdrawResponseDto("Amount withdrawn successfully",userBalance);
 	}
@@ -174,9 +187,16 @@ public class AccountService {
 	    transaction.setTransactionId(txnId);
 
 	    transactionRepository.save(transaction);
-	    newBalance =
-	            Math.round(newBalance * 100.0)
-	            / 100.0;
+	    newBalance =Math.round(newBalance * 100.0)/ 100.0;
+	    
+	    
+	    emailService.sendTransferEmail(sender.getEmail(), sender.getUsername(), 
+	    		receiver.getUsername(), dto.getAmount(), sender.getBalance());
+	    
+	    
+	    
+	    emailService.sendReceiveEmail(receiver.getEmail(), receiver.getUsername(),
+	    		sender.getUsername(), dto.getAmount(), receiver.getBalance());
 
 		return new TransferResponseDto("Amount transferred successfully",newBalance);
 	}
